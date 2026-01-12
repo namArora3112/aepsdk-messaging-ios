@@ -1,0 +1,44 @@
+{
+  "Simulator Target Bundle": "com.adobe.MessagingDemoApp",
+  "aps": {
+    "alert": {
+      "title": "🧪 Test Dismiss Tracking",
+      "subtitle": "Swipe down to see actions",
+      "body": "This notification has Accept and Dismiss action buttons. Tap Dismiss to test dismiss tracking with propositionEventType!"
+    },
+    "badge": 1,
+    "sound": "default",
+    "category": "TRACKABLE_CATEGORY",
+    "thread-id": "dismiss-test-001"
+  },
+  "_xdm": {
+    "mixins": {
+      "_experience": {
+        "customerJourneyManagement": {
+          "messageExecution": {
+            "messageExecutionID": "DISMISS-TEST-001",
+            "messageID": "dismiss-message-001",
+            "messageType": "transactional",
+            "campaignID": "dismiss-test-campaign-001",
+            "campaignVersionID": "dismiss-test-version-001",
+            "batchInstanceID": "dismiss-test-batch-001"
+          }
+        },
+        "decisioning": {
+          "exdRequestID": "dismiss-exd-request-001",
+          "propositions": [
+            {
+              "scopeDetails": {
+                "correlationID": "dismiss-message-001"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "adb_m_id": "dismiss-tracking-id-001",
+  "adb_a_type": "WEBURL",
+  "adb_uri": "https://www.adobe.com/dismiss-test"
+}
+

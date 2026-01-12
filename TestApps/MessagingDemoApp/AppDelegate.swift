@@ -39,7 +39,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         ]
 
         MobileCore.registerExtensions(extensions) {
-            // only start lifecycle if the application is not in the background
+            // Configure with App ID
+            
+            // Update edge environment for stage
+            let isStage = true
+            if isStage {
+                            MobileCore.configureWith(appId: "staging/1b50a869c4a2/b565757407ab/launch-b0c521d31444")
+
+                MobileCore.updateConfigurationWith(configDict: ["edge.environment": "int"])
+            }
+            
+            // Enable sandbox for DEBUG builds
+            #if DEBUG
+                MobileCore.updateConfigurationWith(configDict: ["messaging.useSandbox": true])
+            #endif
+            
+            // Start Assurance session
+            let assuranceURL = "app://com.aepsampleapp?adb_validation_sessionid=96c40f44-09ca-40cf-8ca3-67577c0687bc&env=qa"
+            if !assuranceURL.isEmpty, let url = URL(string: assuranceURL) {
+                Assurance.startSession(url: url)
+            }
+            
+            // Start lifecycle if the application is not in the background
             DispatchQueue.main.async {
                 if application.applicationState != .background {
                     MobileCore.lifecycleStart(additionalContextData: nil)
@@ -47,7 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
             
             // configure
-            MobileCore.configureWith(appId: "3149c49c3910/b6541e5e6301/launch-f7ac0a320fb3-development")
             // set `messaging.useSandbox` to "true"  to test push notifications in debug environment (Apps signed with Development Certificate)
 //            #if DEBUG
 //                let debugConfig = ["messaging.useSandbox": true]

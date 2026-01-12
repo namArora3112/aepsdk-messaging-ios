@@ -1,0 +1,44 @@
+{
+  "Simulator Target Bundle": "com.adobe.MessagingDemoApp",
+  "aps": {
+    "alert": {
+      "title": "🎯 Full Tracking Test",
+      "subtitle": "Long-press to see all actions",
+      "body": "This notification has Accept, Decline, and Dismiss buttons. Test all three actions to verify tracking!"
+    },
+    "badge": 1,
+    "sound": "default",
+    "category": "FULL_TRACKING_CATEGORY",
+    "thread-id": "full-tracking-test-001"
+  },
+  "_xdm": {
+    "mixins": {
+      "_experience": {
+        "customerJourneyManagement": {
+          "messageExecution": {
+            "messageExecutionID": "FULL-TRACKING-TEST-001",
+            "messageID": "full-tracking-message-001",
+            "messageType": "marketing",
+            "campaignID": "full-tracking-campaign-001",
+            "campaignVersionID": "full-tracking-version-001",
+            "batchInstanceID": "full-tracking-batch-001"
+          }
+        },
+        "decisioning": {
+          "exdRequestID": "full-tracking-exd-request-001",
+          "propositions": [
+            {
+              "scopeDetails": {
+                "correlationID": "full-tracking-message-001"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "adb_m_id": "full-tracking-id-001",
+  "adb_a_type": "WEBURL",
+  "adb_uri": "https://www.adobe.com/full-tracking-test"
+}
+

@@ -1,0 +1,44 @@
+{
+  "Simulator Target Bundle": "com.adobe.MessagingDemoApp",
+  "aps": {
+    "alert": {
+      "title": "Test Notification with XDM",
+      "subtitle": "Testing XDM Tracking Flow",
+      "body": "This notification contains XDM tracking data for testing the complete push notification flow"
+    },
+    "badge": 1,
+    "sound": "default",
+    "category": "TRACKABLE_CATEGORY",
+    "thread-id": "test-thread-001"
+  },
+  "_xdm": {
+    "mixins": {
+      "_experience": {
+        "customerJourneyManagement": {
+          "messageExecution": {
+            "messageExecutionID": "HUPU-83448108",
+            "messageID": "a779f457-6e42-4c3a-bb7d-ecea199b432d-0",
+            "messageType": "transactional",
+            "campaignID": "b6910566-ca0c-4e70-a9c4-bccbdc09dc08",
+            "campaignVersionID": "46604d37-61b2-42fe-90ca-b2f98a125984",
+            "batchInstanceID": "a03a9d70-88a6-11f0-a753-e9bf7bba4d0b"
+          }
+        },
+        "decisioning": {
+          "exdRequestID": "xdm-test-exd-request-001",
+          "propositions": [
+            {
+              "scopeDetails": {
+                "correlationID": "a779f457-6e42-4c3a-bb7d-ecea199b432d-0"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "adb_m_id": "test-tracking-id-99999",
+  "adb_a_type": "WEBURL",
+  "adb_uri": "https://www.adobe.com/test"
+}
+

@@ -1,0 +1,42 @@
+{
+  "Simulator Target Bundle": "com.adobe.MessagingDemoApp",
+  "aps": {
+    "alert": {
+      "title": "Notification with Deeplink",
+      "subtitle": "Tap to open app section",
+      "body": "This notification will open a specific section in the app"
+    },
+    "badge": 2,
+    "sound": "default"
+  },
+  "_xdm": {
+    "mixins": {
+      "_experience": {
+        "customerJourneyManagement": {
+          "messageExecution": {
+            "messageExecutionID": "DEEPLINK-ABC123",
+            "messageID": "deeplink-test-message-xyz789",
+            "messageType": "promotional",
+            "campaignID": "summer-sale-campaign-2025",
+            "campaignVersionID": "promo-v2.1",
+            "batchInstanceID": "deeplink-batch-def456"
+          }
+        },
+        "decisioning": {
+          "propositions": [
+            {
+              "scopeDetails": {
+                "correlationID": "deeplink-test-message-xyz789"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "adb_m_id": "deeplink-tracking-id-111",
+  "adb_a_type": "DEEPLINK",
+  "adb_uri": "myapp://promo/summer-sale",
+  "adb_deeplink": "myapp://promo/summer-sale"
+}
+

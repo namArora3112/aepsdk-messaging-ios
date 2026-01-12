@@ -1,0 +1,38 @@
+{
+  "Simulator Target Bundle": "com.adobe.MessagingDemoApp",
+  "aps": {
+    "alert": {
+      "title": "Simple Test Notification",
+      "body": "Quick test with minimal XDM data"
+    },
+    "badge": 1,
+    "sound": "default"
+  },
+  "_xdm": {
+    "mixins": {
+      "_experience": {
+        "customerJourneyManagement": {
+          "messageExecution": {
+            "messageExecutionID": "SIMPLE-001",
+            "messageID": "simple-msg-001",
+            "messageType": "marketing",
+            "campaignID": "simple-campaign-001",
+            "campaignVersionID": "simple-version-001",
+            "batchInstanceID": "simple-batch-001"
+          }
+        },
+        "decisioning": {
+          "propositions": [
+            {
+              "scopeDetails": {
+                "correlationID": "simple-msg-001"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "adb_m_id": "simple-test-tracking-001"
+}
+
